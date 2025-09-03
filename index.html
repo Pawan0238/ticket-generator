@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"/>
+  <title>TechVerse Summit 2026 | Ticket Generator</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Inconsolata:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+  <div class="page">
+    <header class="brand">
+      <h1>🎉 TechVerse Summit 2026</h1>
+      <p>Jan 31, 2026 • 10:00 AM • Austin, TX</p>
+      <p class="tagline">Unlock the Future of Tech 🚀</p>
+    </header>
+
+    <main class="layout">
+      <!-- LEFT: Form -->
+      <section class="panel form-panel">
+        <h2>Create your ticket</h2>
+        <form id="ticketForm">
+          <label>
+            Full name
+            <input id="fullName" type="text" placeholder="John Doe" required />
+          </label>
+
+          <label>
+            Email
+            <input id="email" type="email" placeholder="john@example.com" required />
+          </label>
+
+          <label>
+            Avatar
+            <input id="avatar" type="file" accept="image/*" />
+          </label>
+
+          <label>
+            Pass Type
+            <select id="passType">
+              <option value="VIP">VIP</option>
+              <option value="Regular">Regular</option>
+              <option value="Student">Student</option>
+            </select>
+          </label>
+
+          <button type="submit" class="btn">✨ Generate Ticket</button>
+        </form>
+
+        <div class="actions">
+          <button id="downloadBtn" class="btn secondary">⬇️ Download Ticket</button>
+          <button id="themeToggle" class="btn secondary">🌙 Switch Theme</button>
+        </div>
+
+        <div class="share-group">
+          <h3 class="share-title">Share</h3>
+          <button id="shareNative" class="btn ghost">📤 Share (Device)</button>
+          <div class="share-row">
+            <button id="shareLinkedIn" class="icon-btn" title="Share on LinkedIn">in</button>
+            <button id="shareX" class="icon-btn" title="Share on X">𝕏</button>
+            <button id="shareWhatsApp" class="icon-btn" title="Share on WhatsApp">WA</button>
+            <button id="copyCaption" class="icon-btn" title="Copy caption">⎘</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- RIGHT: Preview -->
+      <section class="panel preview-panel">
+        <h2>Your Ticket Preview</h2>
+
+        <div class="ticket VIP" data-id="CC-00000" id="ticket">
+          <div class="badge" id="badge">VIP 🎟️</div>
+
+          <div class="ticket-left">
+            <div class="avatar" id="avatarPreview"></div>
+            <div class="info">
+              <h3 id="namePreview">Your Name</h3>
+              <p id="emailPreview">your@email.com</p>
+            </div>
+          </div>
+
+          <div class="ticket-right">
+            <div class="event">
+              <h3>TechVerse Summit 2026</h3>
+              <p>Jan 31, 2026 • 10:00 AM</p>
+              <p>Austin, Texas</p>
+            </div>
+
+            <div class="meta">
+              <span class="id" id="ticketId">ID: CC-00000</span>
+              <span class="seat" id="seatNo">Seat A-01</span>
+            </div>
+
+            <div id="qr" class="qr"></div>
+            <p class="qr-label">Scan Me 📱</p>
+            <p class="admit">Admit One</p>
+          </div>
+        </div>
+
+        <p id="countdown" class="countdown">Event starts in: -- d --h --m --s</p>
+      </section>
+    </main>
+
+    <footer class="attribution">
+      Designed & Built by <a href="#">Pawan Kumar</a>.
+    </footer>
+  </div>
+
+  <!-- Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.2/dist/confetti.browser.min.js"></script>
+  <!-- QR -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  <!-- html2canvas -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <!-- App -->
+  <script src="app.js"></script>
+</body>
+</html>
