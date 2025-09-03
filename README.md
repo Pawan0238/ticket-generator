@@ -22,7 +22,7 @@ Tickets can be downloaded or shared online.
 
 
 ## 📸 Demo
-👉 [Live Demo](https://github.com/Pawan0238/ticket-generator/tree/main)
+👉 [Live Demo](https://pawan0238.github.io/ticket-generator/)
 
 ---
 
